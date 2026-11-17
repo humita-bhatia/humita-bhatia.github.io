@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#070a08">
+    <meta name="description" content="Humita Bhatia — Software Developer & Computer Science Engineer. Crafting intelligent systems, robust backends, and deliberate digital experiences.">
+
+    <title>Humita Bhatia — Software Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js importmap -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.164.1/build/three.module.js"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Background atmospheric grain & glow -->
+    <div class="bg-noise" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+    <!-- Scroll progress bar -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="Humita Bhatia Home">
+            <span class="brand-monogram">HB</span>
+            <span class="brand-dot"></span>
+        </a>
+
+        <div class="header-status">
+            <span class="status-indicator"></span>
+            <span class="status-text">Available for Developer Roles &amp; 
+                Engineering Teams</span>
+        </div>
+
+        <nav class="nav-links" id="nav">
+            <a href="#about" class="nav-item">About</a>
+            <a href="#work" class="nav-item">Selected Work</a>
+            <a href="#research" class="nav-item">Research</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#foundations" class="nav-item">Foundations</a>
+            <a href="#contact" class="nav-cta">Initiate Contact ↗</a>
+        </nav>
+
+        <button id="menu" class="mobile-toggle" aria-label="Toggle navigation" 
+        aria-expanded="false">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <!-- 3D Canvas Canvas & Backdrop -->
+            <div class="hero-canvas-wrap">
+                <canvas id="scene"></canvas>
+                <div class="canvas-radial-vignette"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="tag-pill">Software Developer &middot; Computer Science</span>
+                    <span class="location-badge">Gurugram, India</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    HUMITA<br>
+                    <span class="hero-serif">BHATIA.</span>
+                </h1>
+
+                <p class="hero-lead">
+                    Building robust software systems, offline intelligence architectures,
+                    and research-backed technology with deliberate engineering.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn-primary" href="#work">
+                        <span>Explore Projects</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+
+                    <a class="btn-ghost"
+                       href="https://drive.google.com/file/d/16FlCXhMLIoetXoF8o3S21nxsxqU3Ahx_/view?usp=sharing"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>Read Résumé</span>
+                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+
+                <div class="sculpture-hint">
+                    <div class="hint-pulse"></div>
+                    <span>Interactive 3D Surface &middot; Drag or hover to inspect depth</span>
+                </div>
+            </div>
+
+            <!-- Hero bottom status strip -->
+            <div class="hero-footer-strip">
+                <div class="strip-left">
+                    <span class="label">Engineering Profile</span>
+                    <span class="detail">Full-Stack &middot; System Design &middot; Security &middot; AI</span>
+                </div>
+                <div class="strip-divider"></div>
+                <div class="strip-right">
+                    <span class="scroll-prompt">Scroll to unpack</span>
+                    <div class="scroll-arrow">↓</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="editorial-section" id="about">
+            <div class="container">
+                <div class="section-badge">
+                    <span>Perspective</span>
+                </div>
+
+                <div class="editorial-grid">
+                    <div class="editorial-left">
+                        <h2 class="editorial-title">
+                            Curiosity<br>
+                            <em>grounded in</em><br>
+                            execution.
+                        </h2>
+
+                        <div class="focus-pills">
+                            <span class="focus-tag">Systems &amp; Frontend</span>
+                            <span class="focus-tag">Applied AI &amp; Research</span>
+                            <span class="focus-tag">Quantum-Safe Crypto</span>
+                            <span class="focus-tag">Offline Architectures</span>
+                        </div>
+                    </div>
+
+                    <div class="editorial-right">
+                        <p class="editorial-lead">
+                            I am a Computer Science and Engineering undergraduate focused on building dependable,
+                            carefully structured applications that withstand real-world constraints.
+                        </p>
+
+                        <div class="editorial-paragraphs">
+                            <p>
+                                My engineering experience ranges across software development, frontend architecture, applied artificial intelligence, and cybersecurity. At DRDO's DMSRDE research facility in Kanpur, I contributed to <strong>DocTracker</strong>, an air-gapped intelligent document repository management application designed to organize and index critical technical materials locally.
+                            </p>
+                            <p>
+                                Beyond day-to-day codebases, I explore how computational tools interact with human problems. My research on utilizing computer science innovations for student mental health was presented at <strong>ICSET 2025 in Abu Dhabi</strong>, receiving the <em>Best Presentation Award</em>, and subsequently published in <strong>IJACEN</strong>.
+                            </p>
+                            <p>
+                                Whether implementing secure cryptographic protocols, optimizing local document indexing, or building interactive web surfaces, I believe in clean abstractions, thoughtful typography, and systems that feel solid under your fingers.
+                            </p>
+                        </div>
+
+                        <!-- Highlights Quick Stats -->
+                        <div class="about-stats-grid">
+                            <div class="about-stat">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-meta">Hackathons &amp; Technical Jams</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="stat-number">1st</span>
+                                <span class="stat-meta">Author &middot; ICSET Abu Dhabi Award</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="stat-number">Top 1%</span>
+                                <span class="stat-meta">NPTEL Computing Distinction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FEATURED PROJECTS -->
+        <section class="editorial-section dark-tone" id="work">
+            <div class="container">
+                <div class="section-head-split">
+                    <div>
+                        <div class="section-badge">
+                            <span>Featured Projects</span>
+                        </div>
+                        <h2 class="section-title">
+                            Selected <em>builds.</em>
+                        </h2>
+                    </div>
+                    <p class="section-summary">
+                        Deliberate engineering tackling secure architectures, offline document indexing, and user-centric systems.
+                    </p>
+                </div>
+
+                <div class="projects-stack">
+                    <!-- Project 1: DocTracker -->
+                    <article class="project-showcase">
+                        <div class="project-visual">
+                            <div class="app-mockup">
+                                <div class="app-header">
+                                    <div class="mockup-controls">
+                                        <span class="control-dot close"></span>
+                                        <span class="control-dot min"></span>
+                                        <span class="control-dot max"></span>
+                                    </div>
+                                    <span class="mockup-path">DMSRDE / repository / local_indexing.db</span>
+                                    <span class="mockup-status-tag">Offline Mode</span>
+                                </div>
+                                <div class="app-viewport">
+                                    <div class="app-sidebar">
+                                        <div class="sidebar-item active">⌕ Search</div>
+                                        <div class="sidebar-item">▤ Index</div>
+                                        <div class="sidebar-item">◈ OCR Engine</div>
+                                        <div class="sidebar-item">⚙ Config</div>
+                                    </div>
+                                    <div class="app-canvas-content">
+                                        <div class="doc-search-box">
+                                            <span class="search-icon">🔍</span>
+                                            <span class="search-ph">Query local defense repositories...</span>
+                                            <span class="shortcut">Ctrl+K</span>
+                                        </div>
+                                        <div class="doc-file-list">
+                                            <div class="file-row matched">
+                                                <div class="file-icon">PDF</div>
+                                                <div class="file-info">
+                                                    <strong>Technical_Report_DMSRDE_2026.pdf</strong>
+                                                    <span>Indexed &bull; OCR Confidence: 99.4% &bull; 14.8 MB</span>
+                                                </div>
+                                                <span class="file-badge">Matched</span>
+                                            </div>
+                                            <div class="file-row">
+                                                <div class="file-icon">DOC</div>
+                                                <div class="file-info">
+                                                    <strong>Materials_Research_Archive_v4.docx</strong>
+                                                    <span>Full-text cached &bull; SQLite FTS5</span>
+                                                </div>
+                                            </div>
+                                            <div class="file-row">
+                                                <div class="file-icon">PDF</div>
+                                                <div class="file-info">
+                                                    <strong>Polymer_Composite_Standards.pdf</strong>
+                                                    <span>Repository Sync Verified</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="visual-glow green-glow"></div>
+                        </div>
+
+                        <div class="project-details">
+                            <div class="project-context">
+                                <span class="context-org">DRDO &middot; DMSRDE, Kanpur</span>
+                                <span class="context-year">2026</span>
+                            </div>
+
+                            <h3 class="project-name">DocTracker</h3>
+
+                            <p class="project-desc">
+                                An offline intelligent document repository management application engineered during my internship training at DRDO's DMSRDE. Built for secure environments without external network dependency, supporting local repository indexing, full-text OCR parsing, intelligent metadata extraction, and multi-format previewing.
+                            </p>
+
+                            <div class="project-contribution">
+                                <div class="contrib-label">Key Focus &amp; Contributions</div>
+                                <p class="contrib-text">
+                                    Designed and implemented the core frontend architecture, navigation model, responsive local-first search interfaces, and workflow ergonomics for research staff under the TC&amp;HRD division.
+                                </p>
+                            </div>
+
+                            <div class="tech-stack-row">
+                                <span class="tech-pill">Flutter</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">HTML / CSS</span>
+                                <span class="tech-pill">SQLite</span>
+                                <span class="tech-pill">OCR Engine</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a class="action-link"
+                                   href="https://github.com/Gaurav-Bhattacharya/TCHRD-DocTracker"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    <span>Repository</span>
+                                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+
+                                <a class="action-link secondary"
+                                   href="https://drive.google.com/file/d/1xV6UIVH7UK41VJSqpRABsqIPGVtkzWMs/view?usp=sharing"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    <span>Internship Report</span>
+                                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: QuMail -->
+                    <article class="project-showcase reverse">
+                        <div class="project-visual">
+                            <div class="quantum-visual-wrapper">
+                                <div class="quantum-orbital-system">
+                                    <div class="orbital-ring ring-1"></div>
+                                    <div class="orbital-ring ring-2"></div>
+                                    <div class="orbital-ring ring-3"></div>
+                                    <div class="quantum-core">
+                                        <span class="core-glyph">Q</span>
+                                        <div class="photon-pulse"></div>
+                                    </div>
+                                </div>
+                                <div class="quantum-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="k">QKD Protocol</span>
+                                        <span class="v">BB84 Simulation</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="k">Backend API</span>
+                                        <span class="v">FastAPI Async</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="k">Security Tier</span>
+                                        <span class="v">Post-Quantum Compliant</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="visual-glow crimson-glow"></div>
+                        </div>
+
+                        <div class="project-details">
+                            <div class="project-context">
+                                <span class="context-org">Security &amp; Cryptography Research</span>
+                                <span class="context-year">Active Development</span>
+                            </div>
+
+                            <h3 class="project-name">QuMail</h3>
+
+                            <p class="project-desc">
+                                A quantum-secure email communication system exploring the practical integration of Quantum Key Distribution (QKD) primitives into modern messaging protocols. Engineered with a Python FastAPI asynchronous backend ensuring forward secrecy and tamper-evident key negotiation.
+                            </p>
+
+                            <div class="project-contribution">
+                                <div class="contrib-label">Key Focus &amp; Architecture</div>
+                                <p class="contrib-text">
+                                    Investigating quantum-resistant key exchange patterns, zero-trust endpoint message packaging, and secure cryptographic handshakes resilient against future Shor's algorithm breakthroughs.
+                                </p>
+                            </div>
+
+                            <div class="tech-stack-row">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">FastAPI</span>
+                                <span class="tech-pill">QKD Principles</span>
+                                <span class="tech-pill">Cryptography</span>
+                                <span class="tech-pill">AsyncIO</span>
+                            </div>
+
+                            <div class="project-status-note">
+                                <span class="lock-icon">🔒</span>
+                                <span>Active research project; codebase maintained in private engineering repository.</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- RESEARCH & PUBLICATIONS -->
+        <section class="editorial-section" id="research">
+            <div class="container">
+                <div class="section-badge">
+                    <span>Research &amp; Publications</span>
+                </div>
+
+                <div class="research-layout">
+                    <div class="research-hero-text">
+                        <h2 class="section-title">
+                            Beyond the<br>
+                            <em>compiler.</em>
+                        </h2>
+                        <p class="research-intro">
+                            Investigating how computation, algorithmic frameworks, and empathetic software engineering can address student cognitive wellbeing and mental health systems.
+                        </p>
+                    </div>
+
+                    <div class="publication-card">
+                        <div class="pub-badge-row">
+                            <span class="pub-venue">IJACEN &middot; PEER-REVIEWED JOURNAL</span>
+                            <span class="pub-award-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                                BEST PRESENTATION AWARD &middot; ICSET ABU DHABI
+                            </span>
+                        </div>
+
+                        <h3 class="pub-title">
+                            Leveraging Computer Science Innovations to Enhance Student Mental Health
+                        </h3>
+
+                        <p class="pub-abstract">
+                            This research examines how emerging computer science paradigms, intelligent tracking techniques, and accessible digital touchpoints can be thoughtfully designed to provide non-stigmatizing, scalable mental health support for students within higher education ecosystems.
+                        </p>
+
+                        <div class="pub-meta-grid">
+                            <div class="meta-block">
+                                <span class="m-label">Conference</span>
+                                <span class="m-val">ICSET 2025 &middot; Abu Dhabi, UAE</span>
+                            </div>
+                            <div class="meta-block">
+                                <span class="m-label">Journal</span>
+                                <span class="m-val">International Journal of Advances in Computer Science and Engineering (IJACEN)</span>
+                            </div>
+                            <div class="meta-block">
+                                <span class="m-label">Author</span>
+                                <span class="m-val">Humita Bhatia</span>
+                            </div>
+                        </div>
+
+                        <div class="pub-action-bar">
+                            <a class="action-link"
+                               href="https://ijacen.iraj.in/paperdetails/22147"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <span>Read Published Paper</span>
+                                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EXPERIENCE & ACHIEVEMENTS -->
+        <section class="editorial-section dark-tone" id="experience">
+            <div class="container">
+                <div class="section-badge">
+                    <span>Experience &amp; Achievements</span>
+                </div>
+
+                <!-- Experience Banner -->
+                <div class="experience-showcase">
+                    <div class="exp-header-row">
+                        <div>
+                            <span class="exp-period">June 2026 &mdash; July 2026</span>
+                            <h3 class="exp-company">DRDO &middot; DMSRDE</h3>
+                            <h4 class="exp-role">Software Engineering Intern &mdash; TC&amp;HRD</h4>
+                            <p class="exp-location">Defence Materials &amp; Stores Research and Development Establishment &middot; Kanpur, India</p>
+                        </div>
+                        <div class="exp-badge">
+                            <span>Government R&amp;D</span>
+                        </div>
+                    </div>
+
+                    <p class="exp-summary">
+                        Contributed to the development of <strong>DocTracker</strong>, a full-stack cross-platform document repository management system supporting OCR-enabled search across multiple document formats for defense materials researchers.
+                    </p>
+
+                    <div class="exp-highlights-list">
+                        <div class="exp-point">
+                            <span class="bullet">&rarr;</span>
+                            <span>Developed responsive UI modules including authentication, dashboard, repository management, and dark/light theme using HTML, CSS, JavaScript, Dart and Flutter.</span>
+                        </div>
+                        <div class="exp-point">
+                            <span class="bullet">&rarr;</span>
+                            <span>Enhanced document search, indexing, preview, testing, deployment, and technical documentation while collaborating using Git and GitHub.</span>
+                        </div>
+                        <div class="exp-point">
+                            <span class="bullet">&rarr;</span>
+                            <span>Integrated local document indexing and extraction workflows using SQLite, Tesseract OCR, and PDF.js.</span>
+                        </div>
+                    </div>
+
+                    <div class="exp-evidence-bar">
+                        <a class="action-link"
+                           href="https://drive.google.com/file/d/1xV6UIVH7UK41VJSqpRABsqIPGVtkzWMs/view?usp=sharing"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span>View Internship Report</span>
+                            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Achievements & Competitive Milestones -->
+                <div class="achievements-wrap">
+                    <div class="achieve-lead-col">
+                        <span class="achieve-big-stat">15<sup>+</sup></span>
+                        <div class="achieve-lead-caption">
+                            <strong>Hackathons &amp; Technical Sprints</strong>
+                            <p>Testing ideas, building under pressure, and rapidly deploying novel solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievements-cards-grid">
+                        <div class="podium-card gold-border">
+                            <div class="podium-top">
+                                <span class="podium-rank">2nd Place</span>
+                                <span class="podium-year">2026</span>
+                            </div>
+                            <h4 class="podium-event">DevDiva Jam</h4>
+                            <p class="podium-team">Team Cyber Valkyries</p>
+                            <p class="podium-desc">Collaborative technical development addressing real-world problem statements under time-constrained sprint conditions.</p>
+                            <div class="podium-actions">
+                                <a href="https://drive.google.com/file/d/1JPfZrjNeasyO2DcLtTpVdRQKMK2Z068h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="evidence-link">
+                                    <span>View Certificate ↗</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1UUP7TrysHsqoAF15p6RW_dbh3F3sryuI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="evidence-link secondary">
+                                    <span>View Award Proof ↗</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="podium-card silver-border">
+                            <div class="podium-top">
+                                <span class="podium-rank">1st Runner Up (2nd Place)</span>
+                                <span class="podium-year">2026</span>
+                            </div>
+                            <h4 class="podium-event">Hacknite &mdash; Code Royale</h4>
+                            <p class="podium-team">Open Innovation Track</p>
+                            <p class="podium-desc">Awarded 1st runner up honours in Open Innovation for rapid product architecture, functional systems prototype, and technical defence.</p>
+                            <div class="podium-actions">
+                                <a href="https://drive.google.com/file/d/19qpxhRPUqJWGp8SVCA9p-z64hg6Mu7EC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="evidence-link">
+                                    <span>View Certificate ↗</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1UVEbQQ30TBP7tqLr6S_jxZOq4FzpA7K_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="evidence-link secondary">
+                                    <span>View Award Proof ↗</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="podium-card neutral-border">
+                            <div class="podium-top">
+                                <span class="podium-rank">Qualifier &middot; Offline Finalist</span>
+                                <span class="podium-year">2025</span>
+                            </div>
+                            <h4 class="podium-event">Tantrafiesta &mdash; Stellar Voyager</h4>
+                            <p class="podium-team">IIIT Nagpur Game Jam</p>
+                            <p class="podium-desc">Contributed across initial concept development, frontend mechanics, backend logic, and presentation, collaborating with the team to refine and extend the game in the offline round under time constraints.</p>
+                            <div class="podium-actions">
+                                <a href="https://drive.google.com/file/d/1uE7W8-3ST6G1xqJhnv2OvFKK4q7yrb1B/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="evidence-link">
+                                    <span>View Participation Certificate ↗</span>
+                                </a>
+                                <a href="https://youtu.be/jmdne_I1Wu0?si=UXoIxAe28CMPMUEy" target="_blank" rel="noopener noreferrer" class="evidence-link watch-gameplay">
+                                    <span>Watch Gameplay ↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EDUCATION & TECHNICAL FOUNDATIONS -->
+        <section class="editorial-section" id="foundations">
+            <div class="container">
+                <div class="section-badge">
+                    <span>Academic Foundations &amp; Technical Toolkit</span>
+                </div>
+
+                <div class="foundations-grid">
+                    <!-- LEFT COLUMN: Education, Technical Stack, Problem Solving & Additional Certifications -->
+                    <div class="foundations-col">
+                        <div class="degree-card">
+                            <span class="degree-years">2024 &mdash; 2028 &middot; Enrolled</span>
+                            <h3 class="degree-title">Bachelor of Technology</h3>
+                            <h4 class="degree-major">Computer Science &amp; Engineering</h4>
+                            <p class="degree-inst">Dronacharya College of Engineering &middot; Gurugram, India</p>
+
+                            <p class="degree-statement">
+                                Strong academic foundation in computer science and engineering with <strong>87.85% aggregate</strong> (till Semester IV). Secondary (Class X): 94.67%, Senior Secondary (Class XII): 94.4% CBSE.
+                            </p>
+                        </div>
+
+                        <div class="skills-block">
+                            <h4 class="block-title">Technical Skills &amp; Stack</h4>
+
+                            <div class="skill-category">
+                                <span class="cat-label">Programming Languages</span>
+                                <div class="skill-badges">
+                                    <span class="badge">C</span>
+                                    <span class="badge">C++</span>
+                                    <span class="badge">Python</span>
+                                    <span class="badge">Java</span>
+                                    <span class="badge">R</span>
+                                    <span class="badge">Dart</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="cat-label">Web &amp; Frontend Technologies</span>
+                                <div class="skill-badges">
+                                    <span class="badge">HTML5</span>
+                                    <span class="badge">CSS3</span>
+                                    <span class="badge">JavaScript (ES6+)</span>
+                                    <span class="badge">React (Familiarity)</span>
+                                    <span class="badge">Flutter</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="cat-label">Frameworks &amp; Backend</span>
+                                <div class="skill-badges">
+                                    <span class="badge">FastAPI</span>
+                                    <span class="badge">Flask</span>
+                                    <span class="badge">Node.js (Basics)</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="cat-label">Databases &amp; Systems</span>
+                                <div class="skill-badges">
+                                    <span class="badge">SQL</span>
+                                    <span class="badge">SQLite</span>
+                                    <span class="badge">MySQL</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="cat-label">Developer &amp; Deployment Tools</span>
+                                <div class="skill-badges">
+                                    <span class="badge">Git</span>
+                                    <span class="badge">GitHub</span>
+                                    <span class="badge">VS Code</span>
+                                    <span class="badge">Docker</span>
+                                    <span class="badge">Render</span>
+                                    <span class="badge">Vercel</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Problem Solving & Applied Program Credentials placed under Toolkit on Left -->
+                        <div class="applied-creds-wrap">
+                            <h4 class="block-title">Problem Solving &amp; Applied Programs</h4>
+                            <div class="applied-creds-grid">
+                                <div class="cert-item highlight-cert">
+                                    <div class="cert-score-badge">LeetCode</div>
+                                    <div class="cert-details">
+                                        <strong>120+ Problems Solved</strong>
+                                        <span class="cert-provider">Data Structures &amp; Algorithms Practice</span>
+                                        <p>Consistent algorithmic problem solving covering arrays, strings, two-pointers, trees, recursion, and dynamic programming.</p>
+                                        <a href="https://leetcode.com/u/Humita/" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                            <span>View LeetCode Profile ↗</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="cert-item">
+                                    <div class="cert-score-badge">Hands-on</div>
+                                    <div class="cert-details">
+                                        <strong>Python OOP &amp; Data Structures</strong>
+                                        <span class="cert-provider">AI for Better Life &middot; Hands-on Program</span>
+                                        <p>Object-oriented software patterns, modular architecture, algorithmic recursion, and structured data handling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Certifications Area (Compact side-by-side cards on Left) -->
+                        <div class="additional-certs-wrap">
+                            <h4 class="block-title">Additional Certifications</h4>
+                            <div class="additional-certs-grid">
+                                <div class="mini-cert-card">
+                                    <div class="mini-cert-top">
+                                        <span class="mini-cert-badge">Alison</span>
+                                        <span class="mini-cert-date">Oct 2024</span>
+                                    </div>
+                                    <strong>Winning With Communication</strong>
+                                    <p class="mini-cert-desc">Master Your Communication Skills &middot; Personal Development</p>
+                                    <a href="https://drive.google.com/file/d/1xCiBr0u-R2F8Ee-cH5dSlZM0RSxG_mgX/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                        <span>View Certificate ↗</span>
+                                    </a>
+                                </div>
+
+                                <div class="mini-cert-card">
+                                    <div class="mini-cert-top">
+                                        <span class="mini-cert-badge">Udemy</span>
+                                        <span class="mini-cert-date">Oct 2024</span>
+                                    </div>
+                                    <strong>How to Present Your Thoughts Smoothly, Clearly &amp; Powerfully</strong>
+                                    <p class="mini-cert-desc">Professional Presentation &amp; Communication Architecture</p>
+                                    <a href="https://drive.google.com/file/d/1cUE1FOS9P8W_X8fgKUjuaZO4CLWWx4wl/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                        <span>View Certificate ↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: CS Fundamentals & Four National Course Certifications -->
+                    <div class="foundations-col">
+                        <div class="cs-fundamentals-card">
+                            <h4 class="block-title">Computer Science Fundamentals</h4>
+                            <p class="cs-intro">Core theoretical and practical disciplines studied as part of my computer science curriculum:</p>
+                            
+                            <div class="cs-disciplines-grid">
+                                <div class="cs-discipline-item">
+                                    <span class="cs-code">OS</span>
+                                    <div>
+                                        <strong>Operating Systems</strong>
+                                        <p>Process lifecycle, synchronization, memory management, file systems, and concurrency primitives.</p>
+                                    </div>
+                                </div>
+
+                                <div class="cs-discipline-item">
+                                    <span class="cs-code">DBMS</span>
+                                    <div>
+                                        <strong>Database Management Systems</strong>
+                                        <p>Relational schema design, normalization, ACID transactions, SQL querying, and indexing strategies.</p>
+                                    </div>
+                                </div>
+
+                                <div class="cs-discipline-item">
+                                    <span class="cs-code">COA</span>
+                                    <div>
+                                        <strong>Computer Organization &amp; Architecture</strong>
+                                        <p>Instruction cycle, pipelining, processor microarchitecture, memory hierarchy, and caching mechanisms.</p>
+                                    </div>
+                                </div>
+
+                                <div class="cs-discipline-item">
+                                    <span class="cs-code">DAA</span>
+                                    <div>
+                                        <strong>Design &amp; Analysis of Algorithms</strong>
+                                        <p>Asymptotic analysis, divide &amp; conquer, dynamic programming, greedy methods, and graph traversals.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Four National Course Certifications Grouped Together on Right -->
+                        <div class="certs-section-wrap">
+                            <h4 class="block-title">National Course Certifications</h4>
+                            <div class="certs-stack">
+                                <div class="cert-item highlight-cert">
+                                    <div class="cert-score">100%</div>
+                                    <div class="cert-details">
+                                        <strong>The Joy of Computing Using Python</strong>
+                                        <span class="cert-provider">NPTEL IIT Ropar &middot; Top 1% Nationally</span>
+                                        <p>Comprehensive algorithmic problem solving, recursion, data structures, and standard library manipulation.</p>
+                                        <a href="https://drive.google.com/file/d/1OHnNM1DSgOHawKOkU9_bHGXnZFCZCJZr/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                            <span>View Certificate ↗</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="cert-item highlight-cert">
+                                    <div class="cert-score">99%</div>
+                                    <div class="cert-details">
+                                        <strong>Programming in Java</strong>
+                                        <span class="cert-provider">NPTEL IIT Kharagpur &middot; Top 5% Nationally</span>
+                                        <p>Object-oriented paradigms, multithreading, event handling, memory management, and robust exception architectures.</p>
+                                        <a href="https://drive.google.com/file/d/1CdDDlg6uXO1VzJkC1iOJ0pPiFY57IQQq/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                            <span>View Certificate ↗</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="cert-item">
+                                    <div class="cert-score">89%</div>
+                                    <div class="cert-details">
+                                        <strong>Data Structures Using C Programming</strong>
+                                        <span class="cert-provider">SWAYAM IGNOU &middot; Elite Certification</span>
+                                        <p>Pointer arithmetic, linked memory, stacks, queues, trees, sorting complexes, and Big-O efficiency analysis.</p>
+                                        <a href="https://drive.google.com/file/d/1TfrpWmd0YKK5bNcGFCGiURcexGq5Q8-J/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                            <span>View Certificate ↗</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="cert-item">
+                                    <div class="cert-score">73%</div>
+                                    <div class="cert-details">
+                                        <strong>Data Structures and Algorithms Design</strong>
+                                        <span class="cert-provider">NPTEL Elite Certification &middot; MoE Govt. of India</span>
+                                        <p>Divide-and-conquer, dynamic programming, greedy heuristics, graph traversals, and algorithmic complexity.</p>
+                                        <a href="https://drive.google.com/file/d/1gUby2-A4qiGi_GShgFqNUK8DvC-FwW6E/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                            <span>View Certificate ↗</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section class="editorial-section contact-section" id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="section-badge red-badge">
+                        <span>Initiate Conversation</span>
+                    </div>
+
+                    <h2 class="contact-title">
+                        Have a problem<br>
+                        worth <em>solving?</em>
+                    </h2>
+
+                    <p class="contact-desc">
+                        I am currently open to software engineering internships, technical roles, collaborative research, and engineering discussions.
+                    </p>
+
+                    <div class="contact-action-zone">
+                        <a class="contact-email-link" href="mailto:humitabhatia@gmail.com">
+                            <span class="email-address">humitabhatia@gmail.com</span>
+                            <span class="email-arrow">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <div class="social-channels-bar">
+                        <div class="location-flag">
+                            <span class="flag-dot"></span>
+                            <span>Based in Gurugram, India &middot; Open to remote and relocation</span>
+                        </div>
+
+                        <div class="channel-links">
+                            <a href="https://github.com/humita-bhatia"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="channel-btn">
+                                <span>GitHub</span>
+                                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/humita-bhatia/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="channel-btn">
+                                <span>LinkedIn</span>
+                                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+
+                            <a href="mailto:humitabhatia@gmail.com" class="channel-btn">
+                                <span>Direct Mail</span>
+                                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span class="footer-copy">&copy; 2026 Humita Bhatia. All rights reserved.</span>
+            </div>
+
+            <div class="footer-right">
+                <a href="#home" class="back-to-top">
+                    <span>Back to Top</span>
+                    <span>&uarr;</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Application -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
